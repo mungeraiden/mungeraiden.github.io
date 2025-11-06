@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Play Solitaire Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    h2, p {
+      text-align: center;
+      margin: 20px;
+    }
+    #solitaire_embed {
+      width: 100%;
+    }
+    #solitaire_embed > div {
+      position: relative;
+      padding-bottom: 75%;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    #solitaire_embed iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 0;
+    }
+    #solitaire_embed .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.25);
+      border-radius: 6px;
+    }
+    .controls {
+      text-align: center;
+      margin: 20px;
+    }
+    .controls button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    @media (max-width: 800px) {
+      #solitaire_embed > div {
+        padding-bottom: 90% !important;
+      }
+    }
+    @media (max-width: 568px) {
+      #solitaire_embed > div {
+        padding-bottom: 100% !important;
+      }
+    }
+    @media (max-width: 414px) {
+      #solitaire_embed > div {
+        padding-bottom: 120% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="solitaire_embed">
+    <div>
+      <iframe src="https://online-solitaire.com/mlevzuhwsu" title="Play Klondike (Turn 3) and many more Solitaire games at online-solitaire.com" allowfullscreen="false"></iframe>
+      <div class="overlay"></div>
+    </div>
+    <p style="font-size:16px;line-height:40px;text-align:center;margin:0;">
+      Enjoying <a href="https://online-solitaire.com/">Solitaire</a>? Try <a href="https://online-solitaire.com/spider-solitaire">Spider Solitaire</a> and <a href="https://online-solitaire.com/freecell">Freecell</a>!
+    </p>
+  </div>
+
+  <div class="controls">
+    <button onclick="document.querySelector('#solitaire_embed iframe').src += ''">Restart Game</button>
+    <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+  </div>
+
+</body>
+</html>
